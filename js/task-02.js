@@ -7,19 +7,15 @@ const ingredients = [
   "Condiments",
 ];
 
-const ulEl = document.getElementById("ingredients");
+const makeList = (ingredients) => {
+  return ingredients.map((ingredient) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = ingredient;
+    listItem.classList.add("item");
+    return listItem;
+  });
+};
 
-for (const ingridient of ingredients) {
-  const liEl = document.createElement("li");
-  liEl.textContent = ingridient;
-  liEl.classList.add("item");
-  ulEl.appendChild(liEl);
-}
-
-// const ingredient = ingredients
-//   .map((ingridient) => `<li>${ingridient}</li>`)
-//   .join("");
-
-// ulEl.insertAdjacentText("beforeend", ingredient);
-
-// console.log(ingredient);
+const listEl = makeList(ingredients);
+const list = document.querySelector("#ingredients");
+list.append(...listEl);

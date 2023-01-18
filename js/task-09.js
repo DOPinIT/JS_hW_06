@@ -9,9 +9,9 @@ console.log(button);
 
 const handleClick = (event) => {
   console.log(event);
-
-  bodyEl.style.backgroundColor = getRandomHexColor();
-  button.innerHTML = getRandomHexColor();
+  const colorChenge = getRandomHexColor();
+  bodyEl.style.backgroundColor = colorChenge;
+  button.innerHTML = colorChenge;
 };
 
 button.addEventListener("click", handleClick);
