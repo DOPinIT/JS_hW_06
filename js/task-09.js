@@ -6,12 +6,14 @@ console.log(bodyEl);
 
 const button = document.querySelector(".change-color");
 console.log(button);
+const span = document.querySelector(".color");
 
 const handleClick = (event) => {
   console.log(event);
   const colorChenge = getRandomHexColor();
   bodyEl.style.backgroundColor = colorChenge;
   button.innerHTML = colorChenge;
+span.textContent = colorChenge;
 };
 
 button.addEventListener("click", handleClick);
